@@ -108,9 +108,8 @@ AS
 DECLARE @year_month varchar(6);
 SET @year_month = CONCAT(@year, @month);
 
-IF (@year_month NOT IN(SELECT DISTINCT CONCAT(CAST(DATEPART(year,entry_date) AS varchar(4)), 
-											  CAST(DATEPART(month,entry_date) AS varchar(2)))
-						FROM personal_finances.dbo.transactions))
+IF (@year_month NOT IN(SELECT DISTINCT CONCAT(CAST(DATEPART(year,entry_date) AS varchar(4)), CAST(DATEPART(month,entry_date) AS varchar(2)))
+			FROM personal_finances.dbo.transactions))
 	BEGIN
 		PRINT('The month-year pair you are looking for is not available.')
 		RETURN
