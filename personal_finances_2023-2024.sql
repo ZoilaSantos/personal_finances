@@ -74,13 +74,12 @@ BEGIN TRY
 		ISNULL([Car],0) [Car & Insurance],
 		ISNULL([Investing],0) [Roth IRA],
 		ISNULL([Groceries],0) [Groceries],
-		ISNULL([Newton],0) [Newton],
+		ISNULL([Pet],0) [Pet],
 		ISNULL([Miscellaneous/Fun],0) [Miscellaneous/Fun],
 		ISNULL([Emergency Fund],0) [From Emergency Fund],
 		ISNULL([From Savings],0) [From Savings],
-		ISNULL([Deposit],0) - ([Rent] + ISNULL([Investing],0) + ISNULL([Car],0) + 
-								ISNULL([Groceries],0) + ISNULL([Newton],0) + 
-								ISNULL([Miscellaneous/Fun],0)) [Savings: Rebuilding Emergency Fund]
+		ISNULL([Deposit],0) - ([Rent] + ISNULL([Investing],0) + ISNULL([Car],0) + ISNULL([Groceries],0) + ISNULL([Pet],0) + 
+					ISNULL([Miscellaneous/Fun],0)) [Savings: Rebuilding Emergency Fund]
 	FROM #monthly_expenses_pivot '
 
 	EXEC(@SQLquery);
