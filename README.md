@@ -6,6 +6,7 @@ Data Source: My personal finances that I have tracked in an Excel Spreadsheet fo
 
 Analysis: SQL
 * Found here: personal_finances_2023-2024.sql
+* Found here: Personal_Finances.ipynb
 
 Visualization
 
